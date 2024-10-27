@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Помощник</title>
+</head>
+<body>
+    <h1>Добро пожаловать на сайт Помощник</h1>
+    <p>Здесь вы можете найти нужную информацию и получить помощь.</p>
+
+    <!-- Поле для ввода текста -->
+    <label for="inputField">Введите текст:</label>
+    <input type="text" id="inputField" name="inputField">
+
+    <button onclick="showText()">Отправить</button>
+
+    <p id="output"></p>
+
+    <script>
+        function showText() {
+            const input = document.getElementById("inputField").value;
+            document.getElementById("output").innerText = "Вы ввели: " + input;
+        }
+    </script>
+</body>
+</html>
