@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Канцелярия и Ремонт Техники</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: #f0f0f0;
+            background-color: #222;
+        }
+        header {
+            background-color: #ffcc00;
+            color: #222;
+            padding: 1em;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 1em;
+            background-color: #333;
+        }
+        nav a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 2em;
+            max-width: 800px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 2em;
+        }
+        h2 {
+            color: #ffcc00;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 0.5em;
+        }
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .service-item {
+            flex: 1 1 45%;
+            padding: 1em;
+            background-color: #333;
+            border-radius: 8px;
+        }
+        .service-item h3 {
+            color: #ffcc00;
+        }
+        footer {
+            background-color: #111;
+            color: #ffcc00;
+            text-align: center;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Канцелярия и Ремонт Техники</h1>
+    <p>Ваш надежный партнер по ремонту и канцелярии</p>
+</header>
+
+<nav>
+    <a href="#about">О нас</a>
+    <a href="#services">Услуги</a>
+    <a href="#contact">Контакты</a>
+</nav>
+
+<div class="container">
+
+    <section id="about">
+        <h2>О нас</h2>
+        <p>Мы предлагаем широкий спектр услуг в области канцелярии и ремонта техники. Наша команда профессионалов гарантирует высокое качество работы и индивидуальный подход к каждому клиенту. Мы всегда готовы помочь вам с ремонтом компьютеров, принтеров и предоставлением офисных товаров.</p>
+    </section>
+
+    <section id="services">
+        <h2>Услуги</h2>
+        <div class="services-list">
+            <div class="service-item">
+                <h3>Ремонт компьютеров</h3>
+                <p>Профессиональный ремонт компьютеров, настройка и модернизация оборудования.</p>
+            </div>
+            <div class="service-item">
+                <h3>Ремонт принтеров</h3>
+                <p>Обслуживание и ремонт принтеров, замена картриджей и устранение неисправностей.</p>
+            </div>
+            <div class="service-item">
+                <h3>Канцелярские товары</h3>
+                <p>Широкий ассортимент канцелярских товаров для офиса и дома.</p>
+            </div>
+            <div class="service-item">
+                <h3>Техническая поддержка</h3>
+                <p>Консультации по вопросам обслуживания и использования офисной техники.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Свяжитесь с нами по телефону: <strong>+7 (123) 456-7890</strong></p>
+        <p>Наш адрес: г. Москва, ул. Примерная, д. 1</p>
+        <p>Электронная почта: <strong>info@office-repair.ru</strong></p>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Канцелярия и Ремонт Техники. Все права защищены.</p>
+</footer>
+
+</body>
+</html>
