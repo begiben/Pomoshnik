@@ -1,129 +1,109 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Канцелярия и Ремонт Техники</title>
+    <title>Simple SQL Test</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
-            color: #f0f0f0;
-            background-color: #222;
-        }
-        header {
-            background-color: #ffcc00;
-            color: #222;
-            padding: 1em;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        nav {
+            padding: 0;
             display: flex;
             justify-content: center;
-            gap: 20px;
-            padding: 1em;
-            background-color: #333;
-        }
-        nav a {
-            color: #ffcc00;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
         }
         .container {
-            padding: 2em;
-            max-width: 800px;
-            margin: auto;
-        }
-        section {
-            margin-bottom: 2em;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h2 {
-            color: #ffcc00;
-            border-bottom: 2px solid #ffcc00;
-            padding-bottom: 0.5em;
+            margin-top: 0;
         }
-        .services-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+        form {
+            margin-bottom: 20px;
         }
-        .service-item {
-            flex: 1 1 45%;
-            padding: 1em;
-            background-color: #333;
-            border-radius: 8px;
+        label {
+            display: block;
+            margin: 10px 0 5px;
         }
-        .service-item h3 {
-            color: #ffcc00;
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
         }
-        footer {
-            background-color: #111;
-            color: #ffcc00;
-            text-align: center;
-            padding: 1em;
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Канцелярия и Ремонт Техники</h1>
-    <p>Ваш надежный партнер по ремонту и канцелярии</p>
-</header>
-
-<nav>
-    <a href="#about">О нас</a>
-    <a href="#services">Услуги</a>
-    <a href="#contact">Контакты</a>
-</nav>
-
 <div class="container">
+    <h2>Register</h2>
+    <form id="registerForm">
+        <label for="reg_username">Username:</label>
+        <input type="text" id="reg_username" name="reg_username" required>
+        <label for="reg_password">Password:</label>
+        <input type="password" id="reg_password" name="reg_password" required>
+        <button type="submit">Register</button>
+    </form>
 
-    <section id="about">
-        <h2>О нас</h2>
-        <p>Мы предлагаем широкий спектр услуг в области канцелярии и ремонта техники. Наша команда профессионалов гарантирует высокое качество работы и индивидуальный подход к каждому клиенту. Мы всегда готовы помочь вам с ремонтом компьютеров, принтеров и предоставлением офисных товаров.</p>
-    </section>
-
-    <section id="services">
-        <h2>Услуги</h2>
-        <div class="services-list">
-            <div class="service-item">
-                <h3>Ремонт компьютеров</h3>
-                <p>Профессиональный ремонт компьютеров, настройка и модернизация оборудования.</p>
-            </div>
-            <div class="service-item">
-                <h3>Ремонт принтеров</h3>
-                <p>Обслуживание и ремонт принтеров, замена картриджей и устранение неисправностей.</p>
-            </div>
-            <div class="service-item">
-                <h3>Канцелярские товары</h3>
-                <p>Широкий ассортимент канцелярских товаров для офиса и дома.</p>
-            </div>
-            <div class="service-item">
-                <h3>Техническая поддержка</h3>
-                <p>Консультации по вопросам обслуживания и использования офисной техники.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Контакты</h2>
-        <p>Свяжитесь с нами по телефону: <strong>+7 (123) 456-7890</strong></p>
-        <p>Наш адрес: г. Москва, ул. Примерная, д. 1</p>
-        <p>Электронная почта: <strong>info@office-repair.ru</strong></p>
-    </section>
-
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="log_username">Username:</label>
+        <input type="text" id="log_username" name="log_username" required>
+        <label for="log_password">Password:</label>
+        <input type="password" id="log_password" name="log_password" required>
+        <button type="submit">Login</button>
+    </form>
 </div>
 
-<footer>
-    <p>&copy; 2024 Канцелярия и Ремонт Техники. Все права защищены.</p>
-</footer>
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let username = document.getElementById('reg_username').value;
+        let password = document.getElementById('reg_password').value;
 
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+
+        let userExists = users.some(user => user.username === username);
+
+        if (!userExists) {
+            users.push({ username: username, password: password });
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('Registration successful');
+        } else {
+            alert('Username already exists');
+        }
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let username = document.getElementById('log_username').value;
+        let password = document.getElementById('log_password').value;
+
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+
+        let validUser = users.find(user => user.username === username && user.password === password);
+
+        if (validUser) {
+            alert('Login successful');
+        } else {
+            alert('Invalid credentials');
+        }
+    });
+</script>
 </body>
 </html>
